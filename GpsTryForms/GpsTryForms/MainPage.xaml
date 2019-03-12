@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GpsTryForms"
+             
+             x:Class="GpsTryForms.MainPage">
+
+    <AbsoluteLayout VerticalOptions="Fill"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="#ede7f6"
+                    x:Name="AbsoluteL"
+                    >
+
+        <StackLayout 
+            x:Name="MainStack"
+            Padding="0, 60, 0, 0"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="SizeProportional"
+            >
+            <Label x:Name="LatitudeText"
+                   Text="Широта:"
+                   TextColor="#666"
+                   Margin="10, 0, 10, 0"
+                   FontSize="30"
+                   />
+
+            <Label x:Name="LatitudeLabel"
+                   Text="Подождите..."
+                   TextColor="Orange"
+                   Margin="10, 0, 10, 0"
+                   FontSize="30"
+                   />
+
+            <Label  x:Name="LongitudeText"
+                    Text="Долгота:"
+                    TextColor="#666"
+                    Margin="10, 0, 10, 0"
+                    FontSize="30"
+                    />
+
+            <Label x:Name="LongitudeLabel"
+                   Text="Подождите..."
+                   TextColor="Orange"
+                   Margin="10, 0, 10, 0"
+                   FontSize="30"
+                   />
+
+            <Button x:Name="EmergencySms"
+                    VerticalOptions="EndAndExpand"
+                    Text="Срочное СМС"
+                    Clicked="SendEmergencySms"
+                    Margin="10"
+                    IsEnabled="False"
+                    >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                            Value="#9575cd" />
+                                <Setter Property="TextColor"
+                            Value="#ede7f6" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                            Value="#673ab7" />
+                                <Setter Property="TextColor"
+                            Value="#fff" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                            Value="#b39ddb" />
+                                <Setter Property="TextColor"
+                            Value="#ccc" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+
+            <Button x:Name="OptionableSms"
+                VerticalOptions="End"
+                Text="Настраиваемое СМС"
+                Clicked="SendOptionableSms"
+                Margin="10"
+                IsEnabled="False"
+                    >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                            Value="#9575cd" />
+                                <Setter Property="TextColor"
+                            Value="#ede7f6" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                            Value="#673ab7" />
+                                <Setter Property="TextColor"
+                            Value="#fff" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                            Value="#b39ddb" />
+                                <Setter Property="TextColor"
+                            Value="#ccc" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+        </StackLayout>
+
+        <BoxView BackgroundColor="#673ab7" 
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 60"
+                 AbsoluteLayout.LayoutFlags="WidthProportional"                 
+                 />
+
+        <Button Image="baseline_menu_white_48dp.png"
+                x:Name="OpenMenuButton"
+                Padding="0"
+                Margin="0"
+                AbsoluteLayout.LayoutBounds="0, 0, 60, 60"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OpenMenu_button"
+                >
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                            Value="Transparent" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                            Value="#9575cd" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Button>
+
+        <Button Image="baseline_file_copy_white_18dp.png"
+                x:Name="CopyCoordinates"
+                Padding="0"
+                Margin="0"
+                AbsoluteLayout.LayoutBounds="1, 0, 60, 60"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="CopyCoords"
+                IsEnabled="False"
+                >
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                            Value="Transparent" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                            Value="#9575cd" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="Image"
+                            Value="baseline_file_copy_disabled_white_18dp.png" />
+                            <Setter Property="BackgroundColor"
+                            Value="Transparent" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Button>
+        <BoxView           
+            x:Name="CoverMenu"
+            IsVisible="False"
+            BackgroundColor="#bb000000"
+            Opacity="0"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All" 
+            >
+        </BoxView>
+        <AbsoluteLayout 
+            x:Name="MenuBox"
+            IsVisible="True"
+            AbsoluteLayout.LayoutBounds="0, 0, .7, 1" 
+            TranslationX="-10000"
+            AbsoluteLayout.LayoutFlags="All" 
+            >            
+            <BoxView
+                x:Name="Menu"
+                BackgroundColor="#9575cd"       
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="SizeProportional" 
+            />
+            <AbsoluteLayout     
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="SizeProportional"   
+                >
+                <BoxView
+                    x:Name="MenuTop"
+                    BackgroundColor="#673ab7"     
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 150"
+                    AbsoluteLayout.LayoutFlags="WidthProportional" 
+                    />
+                <Label
+                    x:Name="OptionsLabel"
+                    Text="НАСТРОЙКИ"
+                    AbsoluteLayout.LayoutBounds="0, 150, 1, 60"
+                    AbsoluteLayout.LayoutFlags="WidthProportional" 
+                    TextColor="#fff"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    BackgroundColor="#9575cd"
+                    Margin="20"
+                    />
+                <Button 
+                    x:Name="Options"
+                    FontAttributes="Bold"
+                    Padding="15"
+                    Margin="0"
+                    Clicked="OnOptionsPageAsync"
+                    AbsoluteLayout.LayoutBounds="0, 150, 1, 60"
+                    AbsoluteLayout.LayoutFlags="WidthProportional" 
+                    >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                            Value="Transparent" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                            Value="#887e57c2" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+                <Label
+                    x:Name="HelpLabel"
+                    Text="ПОМОЩЬ"
+                    AbsoluteLayout.LayoutBounds="0, 210, 1, 60"
+                    AbsoluteLayout.LayoutFlags="WidthProportional" 
+                    TextColor="#fff"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    Margin="20"
+                    />
+                <Button 
+                    x:Name="Help"
+                    Padding="15"
+                    Margin="0"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="#fff"
+                    Clicked="OnHelpPageAsync"
+                    AbsoluteLayout.LayoutBounds="0, 210, 1, 60"
+                    AbsoluteLayout.LayoutFlags="WidthProportional" 
+                    >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                            Value="Transparent" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                            Value="#887e57c2" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+            </AbsoluteLayout>
+        </AbsoluteLayout>
+        <Label
+            x:Name="SavedLabel"
+            AbsoluteLayout.LayoutBounds=".5, .5, 300, 30"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Text="Скопировано в буфер обмена"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            TextColor="White"
+            BackgroundColor="#77000000"
+            IsVisible="False"
+            />
+        <Label
+            x:Name="SendLabel"
+            AbsoluteLayout.LayoutBounds=".5, .5, 300, 30"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Text="Отправлено!"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            TextColor="White"
+            BackgroundColor="#77000000"
+            IsVisible="False"
+            />
+        <BoxView           
+            x:Name="CoverDialog"
+            IsVisible="False"
+            BackgroundColor="#bb000000"
+            Opacity="0"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All" 
+            >
+        </BoxView>
+        <StackLayout
+            x:Name="DialogGPSSettings"
+            BackgroundColor="#ede7f6"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds=".5, .5, .8, .6"
+            AbsoluteLayout.LayoutFlags="All">
+            <FlexLayout 
+                Direction="Column"
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="FillAndExpand">
+                <Label 
+                    x:Name="DialogTop"
+                    Text="Открыть настройки определения местоположения?"
+                    TextColor="#00aaff"
+                    Margin="5"
+                    FontSize="20"                    
+                />
+                <BoxView 
+                    BackgroundColor="#00aaff"
+                    HeightRequest="1"
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    />
+                <Label 
+                    x:Name="DialogText"
+                    Text="Пожалуйста, включите сервисы GPS, чтобы приложение могло обнаружить ваше местоположение"
+                    TextColor="Black"
+                    Margin="5"
+                    FontSize="20"                    
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                />
+            </FlexLayout>
+            <FlexLayout 
+                Direction="Row"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand">
+                <Button
+                    x:Name="DialogNo"
+                    Text="Нет"
+                    WidthRequest="500"
+                    Clicked="CloseDialogGPSSettings_button"
+                    Margin="5"
+                    FontSize="20"
+                >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                            Value="#9575cd" />
+                                    <Setter Property="TextColor"
+                            Value="#ede7f6" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                            Value="#673ab7" />
+                                    <Setter Property="TextColor"
+                            Value="#fff" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                            Value="#b39ddb" />
+                                    <Setter Property="TextColor"
+                            Value="#ccc" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+                <Button
+                    x:Name="DialogYes"
+                    Text="Да"
+                    WidthRequest="500"
+                    Clicked="OpenGPSSettings"
+                    Margin="5"
+                    FontSize="20"
+                    >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                            Value="#9575cd" />
+                                    <Setter Property="TextColor"
+                            Value="#ede7f6" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                            Value="#673ab7" />
+                                    <Setter Property="TextColor"
+                            Value="#fff" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                            Value="#b39ddb" />
+                                    <Setter Property="TextColor"
+                            Value="#ccc" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+            </FlexLayout>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>
