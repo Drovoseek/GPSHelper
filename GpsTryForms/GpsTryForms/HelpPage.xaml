@@ -7,7 +7,7 @@
                     HorizontalOptions="Fill"
                     BackgroundColor="#ede7f6"
                     >
-            
+
             <BoxView BackgroundColor="#673ab7" 
                  AbsoluteLayout.LayoutBounds="0, 0, 1, 60"
                  AbsoluteLayout.LayoutFlags="WidthProportional"                 
@@ -40,6 +40,59 @@
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
             </Button>
+            <ScrollView
+                AbsoluteLayout.LayoutBounds="0, 60, 1, 1"
+                AbsoluteLayout.LayoutFlags="SizeProportional">
+                <StackLayout>
+                    <Label
+                        Margin="20, 10, 20, 0"
+                        TextColor="#666"
+                        FontSize="20"
+                        Text="Приложение предназначено для определения текущих координат пользователя. Поскольку используются сервисы GPS, то возможность и точность позиционирования зависят от устройства.">
+                    </Label>
+                    <Label
+                        Margin="20, 10, 20, 0"
+                        TextColor="#666"
+                        FontSize="20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Кнопка "/>
+                                <Span Text="СРОЧНОЕ СМС " FontSize="20" FontAttributes="Bold" />
+                                <Span Text="отправляет сообщение на номер "/>
+                                <Span Text="112 " FontSize="20" FontAttributes="Bold" />
+                                <Span Text="с текущими координатами устройства.\n"/>
+                                <Span Text="Пример: &quot;Нужна помощь, мои координаты: широта=-90,0000000 долгота=180,0000000&quot;"></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label
+                        Margin="20, 10, 20, 0"
+                        TextColor="#666"
+                        FontSize="20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Кнопка "/>
+                                <Span Text="НАСТРАИВАЕМОЕ СМС " FontSize="20" FontAttributes="Bold" />
+                                <Span Text="создаёт сообщение с таким же текстом, как и в срочном сообщении, но позволяет изменить текст сообщения и адресата. Также можно изменить адресата по умолчанию в "/>
+                                <Span Text="настройках " FontSize="20" FontAttributes="Bold" />
+                                <Span Text="приложения."/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label
+                        Margin="20, 10, 20, 80"
+                        TextColor="#666"
+                        FontSize="20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Справа наверху на главной странице находится кнопка "/>
+                                <Span Text="Скопировать" FontSize="20" FontAttributes="Bold" />
+                                <Span Text=", с помощью которой Вы можете скопировать текущие координаты в буфер обмена"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </ScrollView>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
