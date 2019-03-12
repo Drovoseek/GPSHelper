@@ -80,16 +80,28 @@
                         </Label.FormattedText>
                     </Label>
                     <Label
-                        Margin="20, 10, 20, 80"
+                        Margin="20, 10, 20, 0"
                         TextColor="#666"
                         FontSize="20">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="Справа наверху на главной странице находится кнопка "/>
                                 <Span Text="Скопировать" FontSize="20" FontAttributes="Bold" />
-                                <Span Text=", с помощью которой Вы можете скопировать текущие координаты в буфер обмена"/>
+                                <Span Text=", с помощью которой Вы можете скопировать текущие координаты в буфер обмена."/>
                             </FormattedString>
                         </Label.FormattedText>
+                    </Label>
+                    <Label
+                        Margin="20, 10, 20, 0"
+                        TextColor="#666"
+                        FontSize="20"
+                        Text="В случае, если приложению долго не удаётся определить Ваши координаты, то рекомендуется перезапустить приложение либо проверить, включены ли сервисы GPS и есть ли у приложения доступ к ним.">
+                    </Label>
+                    <Label
+                        Margin="20, 10, 20, 0"
+                        TextColor="#666"
+                        FontSize="20"
+                        Text="Также вполне возможно, что Ваше устройство находится в зоне слабого сигнала.">
                     </Label>
                 </StackLayout>
             </ScrollView>

@@ -10,17 +10,17 @@
             <StackLayout
                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                 AbsoluteLayout.LayoutFlags="SizeProportional"
-                Padding="0, 60, 0, 0"
+                Padding="20, 70, 20, 0"
                 >
                 <Label Text="Номер по умолчанию в настраиваемом СМС:"
                        TextColor="#666"
-                       FontSize="30" />
+                       FontSize="20" />
 
                 <Entry x:Name="RecipientInput"
                        Placeholder = "+7ХХХХХХХХХХ"
                        PlaceholderColor="#ccc"
                        TextColor="#512da8"
-                       FontSize="30"
+                       FontSize="20"
                        Text=""
                        />
                 <Button x:Name="ChangeRecipientButton"
