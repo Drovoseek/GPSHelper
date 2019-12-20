@@ -12,6 +12,17 @@
                 AbsoluteLayout.LayoutFlags="SizeProportional"
                 Padding="20, 70, 20, 0"
                 >
+                <Label Text="Номер для срочного СМС:"
+                       TextColor="#666"
+                       FontSize="20" />
+
+                <Entry x:Name="EmergencyRecipientInput"
+                       Placeholder = "+7ХХХХХХХХХХ"
+                       PlaceholderColor="#ccc"
+                       TextColor="#512da8"
+                       FontSize="20"
+                       Text=""
+                       />
                 <Label Text="Номер по умолчанию в настраиваемом СМС:"
                        TextColor="#666"
                        FontSize="20" />
@@ -24,7 +35,7 @@
                        Text=""
                        />
                 <Button x:Name="ChangeRecipientButton"
-                        Clicked="ChangeRecipient"
+                        Clicked="ChangeRecipients"
                         Text="Сохранить"
                         VerticalOptions="EndAndExpand"
                         HorizontalOptions="FillAndExpand"

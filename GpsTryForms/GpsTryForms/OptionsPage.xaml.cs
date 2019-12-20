@@ -21,6 +21,7 @@ namespace GpsTryForms
             NavigationPage.SetHasNavigationBar(this, false);
             CustomRecipient = CrossSettings.Current.GetValueOrDefault("CustomRecipient", "112");
             RecipientInput.Text = CustomRecipient;
+            EmergencyRecipientInput.Text = CrossSettings.Current.GetValueOrDefault("EmergencyRecipient", "112");
         }
 
         public async void GoBack(object sender, EventArgs e)
@@ -28,10 +29,12 @@ namespace GpsTryForms
             await Navigation.PopAsync();
         }
 
-        public void ChangeRecipient(object sender, EventArgs e)
+        public void ChangeRecipients(object sender, EventArgs e)
         {
             CustomRecipient = RecipientInput.Text;
+            string EmergencyRecipient = EmergencyRecipientInput.Text;
             CrossSettings.Current.AddOrUpdateValue("CustomRecipient", CustomRecipient);
+            CrossSettings.Current.AddOrUpdateValue("EmergencyRecipient", EmergencyRecipient);
         }
     }
 }

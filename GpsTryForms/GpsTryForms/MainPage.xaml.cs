@@ -193,7 +193,8 @@ namespace GpsTryForms
                     string _latitude_text = LatitudeLabel.Text;
                     string _longitude_text = LongitudeLabel.Text;
                     string sendText = "Нужна помощь, мои координаты: широта=" + _latitude_text + " долгота=" + _longitude_text;
-                    SmsManager.Default.SendTextMessage("+79872538155", null, sendText, null, null);
+                    string emergency_recipient = CrossSettings.Current.GetValueOrDefault("EmergencyRecipient", "112");
+                    SmsManager.Default.SendTextMessage(emergency_recipient, null, sendText, null, null);
                     SendLabel.FadeTo(1, 250, Easing.CubicOut);
                     SendLabel.IsVisible = true;
                     await Task.Delay(500);
