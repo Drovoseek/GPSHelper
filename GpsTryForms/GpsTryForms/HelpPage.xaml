@@ -59,7 +59,7 @@
                                 <Span Text="Button "/>
                                 <Span Text="QUICK SMS " FontSize="20" FontAttributes="Bold" />
                                 <Span Text="sends message to number "/>
-                                <Span Text="112 " FontSize="20" FontAttributes="Bold" />
+                                <Span Text="102 " FontSize="20" FontAttributes="Bold" />
                                 <Span Text="by default with current device coordinates. "/>
                                 <Span Text="Example: &quot;Require help, my location: latitude=-90,0000000 longitude=180,0000000&quot;" />
                             </FormattedString>

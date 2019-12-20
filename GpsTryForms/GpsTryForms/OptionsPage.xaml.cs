@@ -19,9 +19,9 @@ namespace GpsTryForms
 		{
 			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, false);
-            CustomRecipient = CrossSettings.Current.GetValueOrDefault("CustomRecipient", "112");
+            CustomRecipient = CrossSettings.Current.GetValueOrDefault("CustomRecipient", "102");
             RecipientInput.Text = CustomRecipient;
-            EmergencyRecipientInput.Text = CrossSettings.Current.GetValueOrDefault("EmergencyRecipient", "112");
+            EmergencyRecipientInput.Text = CrossSettings.Current.GetValueOrDefault("EmergencyRecipient", "102");
         }
 
         public async void GoBack(object sender, EventArgs e)

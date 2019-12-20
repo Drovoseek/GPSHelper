@@ -192,8 +192,8 @@ namespace GpsTryForms
                 {
                     string _latitude_text = LatitudeLabel.Text;
                     string _longitude_text = LongitudeLabel.Text;
-                    string sendText = "Require help, my location: latitude=" + _latitude_text + " longitude=" + _longitude_text;
-                    string emergency_recipient = CrossSettings.Current.GetValueOrDefault("EmergencyRecipient", "112");
+                    string sendText = "Köməyə ehtiyacım var, mənim koordinatlarım: latitude=" + _latitude_text + " longitude=" + _longitude_text;
+                    string emergency_recipient = CrossSettings.Current.GetValueOrDefault("EmergencyRecipient", "102");
                     SmsManager.Default.SendTextMessage(emergency_recipient, null, sendText, null, null);
                     SendLabel.FadeTo(1, 250, Easing.CubicOut);
                     SendLabel.IsVisible = true;
@@ -210,9 +210,9 @@ namespace GpsTryForms
             {
                 string _latitude_text = LatitudeLabel.Text;
                 string _longitude_text = LongitudeLabel.Text;
-                string sendText = "Require help, my location: latitude=" + _latitude_text + " longitude=" + _longitude_text;
+                string sendText = "Köməyə ehtiyacım var, mənim koordinatlarım: latitude=" + _latitude_text + " longitude=" + _longitude_text;
                 var smsMessenger = CrossMessaging.Current.SmsMessenger;
-                CustomRecipient = CrossSettings.Current.GetValueOrDefault("CustomRecipient", "112");
+                CustomRecipient = CrossSettings.Current.GetValueOrDefault("CustomRecipient", "102");
                 if (smsMessenger.CanSendSms)
                 {
                     smsMessenger.SendSms(CustomRecipient, sendText);

@@ -48,6 +48,8 @@
             <Button x:Name="EmergencySms"
                     VerticalOptions="EndAndExpand"
                     Text="Quick SMS"
+                    Image="phone.png"
+                    ContentLayout="Left, 60"
                     Clicked="SendEmergencySms"
                     Margin="10"
                     IsEnabled="False"
