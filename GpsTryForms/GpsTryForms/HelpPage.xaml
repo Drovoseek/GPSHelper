@@ -48,7 +48,7 @@
                         Margin="20, 10, 20, 0"
                         TextColor="#666"
                         FontSize="20"
-                        Text="Приложение предназначено для определения текущих координат пользователя. Поскольку используются сервисы GPS, то возможность и точность позиционирования зависят от устройства.">
+                        Text="Application designed to obtain current location coordinates of user. Because application uses GPS services, possibility and accuracy depends on device.">
                     </Label>
                     <Label
                         Margin="20, 10, 20, 0"
@@ -56,12 +56,12 @@
                         FontSize="20">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Кнопка "/>
-                                <Span Text="СРОЧНОЕ СМС " FontSize="20" FontAttributes="Bold" />
-                                <Span Text="отправляет сообщение на номер "/>
+                                <Span Text="Button "/>
+                                <Span Text="QUICK SMS " FontSize="20" FontAttributes="Bold" />
+                                <Span Text="sends message to number "/>
                                 <Span Text="112 " FontSize="20" FontAttributes="Bold" />
-                                <Span Text="с текущими координатами устройства.\n"/>
-                                <Span Text="Пример: &quot;Нужна помощь, мои координаты: широта=-90,0000000 долгота=180,0000000&quot;"></Span>
+                                <Span Text="by default with current device coordinates. "/>
+                                <Span Text="Example: &quot;Require help, my location: latitude=-90,0000000 longitude=180,0000000&quot;" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
@@ -71,11 +71,9 @@
                         FontSize="20">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Кнопка "/>
-                                <Span Text="НАСТРАИВАЕМОЕ СМС " FontSize="20" FontAttributes="Bold" />
-                                <Span Text="создаёт сообщение с таким же текстом, как и в срочном сообщении, но позволяет изменить текст сообщения и адресата. Также можно изменить адресата по умолчанию в "/>
-                                <Span Text="настройках " FontSize="20" FontAttributes="Bold" />
-                                <Span Text="приложения."/>
+                                <Span Text="Button "/>
+                                <Span Text="CUSTOMIZABLE SMS " FontSize="20" FontAttributes="Bold" />
+                                <Span Text="creates message with the same text, as in quick sms, but lets you change text and recipient. "/>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
@@ -85,9 +83,21 @@
                         FontSize="20">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Справа наверху на главной странице находится кнопка "/>
-                                <Span Text="Скопировать" FontSize="20" FontAttributes="Bold" />
-                                <Span Text=", с помощью которой Вы можете скопировать текущие координаты в буфер обмена."/>
+                                <Span Text="You can change default numbers for both SMS in "/>
+                                <Span Text="SETTINGS " FontSize="20" FontAttributes="Bold" />
+                                <Span Text="of application."/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label
+                        Margin="20, 10, 20, 0"
+                        TextColor="#666"
+                        FontSize="20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="There is "/>
+                                <Span Text="COPY" FontSize="20" FontAttributes="Bold" />
+                                <Span Text=" button in the top right, which can copy current coordinates to the clipboard."/>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
@@ -95,13 +105,13 @@
                         Margin="20, 10, 20, 0"
                         TextColor="#666"
                         FontSize="20"
-                        Text="В случае, если приложению долго не удаётся определить Ваши координаты, то рекомендуется перезапустить приложение либо проверить, включены ли сервисы GPS и есть ли у приложения доступ к ним.">
+                        Text="In case application cannot obtain your coordinates for long time, it's recommended to restart application, or check if your GPS services are on or does it has permission to them.">
                     </Label>
                     <Label
                         Margin="20, 10, 20, 80"
                         TextColor="#666"
                         FontSize="20"
-                        Text="Также вполне возможно, что Ваше устройство находится в зоне слабого сигнала.">
+                        Text="Also it is possible that your device has low signal.">
                     </Label>
                 </StackLayout>
             </ScrollView>

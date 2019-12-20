@@ -18,28 +18,28 @@
             AbsoluteLayout.LayoutFlags="SizeProportional"
             >
             <Label x:Name="LatitudeText"
-                   Text="Широта:"
+                   Text="Latitude:"
                    TextColor="#666"
                    Margin="10, 0, 10, 0"
                    FontSize="30"
                    />
 
             <Label x:Name="LatitudeLabel"
-                   Text="Подождите..."
+                   Text="Loading..."
                    TextColor="Orange"
                    Margin="10, 0, 10, 0"
                    FontSize="30"
                    />
 
             <Label  x:Name="LongitudeText"
-                    Text="Долгота:"
+                    Text="Longitude:"
                     TextColor="#666"
                     Margin="10, 0, 10, 0"
                     FontSize="30"
                     />
 
             <Label x:Name="LongitudeLabel"
-                   Text="Подождите..."
+                   Text="Loading..."
                    TextColor="Orange"
                    Margin="10, 0, 10, 0"
                    FontSize="30"
@@ -47,7 +47,7 @@
 
             <Button x:Name="EmergencySms"
                     VerticalOptions="EndAndExpand"
-                    Text="Срочное СМС"
+                    Text="Quick SMS"
                     Clicked="SendEmergencySms"
                     Margin="10"
                     IsEnabled="False"
@@ -87,7 +87,7 @@
 
             <Button x:Name="OptionableSms"
                 VerticalOptions="End"
-                Text="Настраиваемое СМС"
+                Text="Customizable SMS"
                 Clicked="SendOptionableSms"
                 Margin="10"
                 IsEnabled="False"
@@ -230,7 +230,7 @@
                     />
                 <Label
                     x:Name="OptionsLabel"
-                    Text="НАСТРОЙКИ"
+                    Text="SETTINGS"
                     AbsoluteLayout.LayoutBounds="0, 150, 1, 60"
                     AbsoluteLayout.LayoutFlags="WidthProportional" 
                     TextColor="#fff"
@@ -269,7 +269,7 @@
                 </Button>
                 <Label
                     x:Name="HelpLabel"
-                    Text="ПОМОЩЬ"
+                    Text="HELP"
                     AbsoluteLayout.LayoutBounds="0, 210, 1, 60"
                     AbsoluteLayout.LayoutFlags="WidthProportional" 
                     TextColor="#fff"
@@ -313,7 +313,7 @@
             x:Name="SavedLabel"
             AbsoluteLayout.LayoutBounds=".5, .5, 300, 30"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            Text="Скопировано в буфер обмена"
+            Text="Copied to Clipboard"
             HorizontalTextAlignment="Center"
             VerticalTextAlignment="Center"
             TextColor="White"
@@ -324,7 +324,7 @@
             x:Name="SendLabel"
             AbsoluteLayout.LayoutBounds=".5, .5, 300, 30"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            Text="Отправлено!"
+            Text="Sent!"
             HorizontalTextAlignment="Center"
             VerticalTextAlignment="Center"
             TextColor="White"
@@ -352,7 +352,7 @@
                 HorizontalOptions="FillAndExpand">
                 <Label 
                     x:Name="DialogTop"
-                    Text="Открыть настройки определения местоположения?"
+                    Text="Open location settings?"
                     TextColor="#00aaff"
                     Margin="5"
                     FontSize="20"                    
@@ -365,7 +365,7 @@
                     />
                 <Label 
                     x:Name="DialogText"
-                    Text="Пожалуйста, включите сервисы GPS, чтобы приложение могло обнаружить ваше местоположение"
+                    Text="Please, turn on GPS services to let application obtain your location"
                     TextColor="Black"
                     Margin="5"
                     FontSize="20"                    
@@ -379,7 +379,7 @@
                 HorizontalOptions="FillAndExpand">
                 <Button
                     x:Name="DialogNo"
-                    Text="Нет"
+                    Text="No"
                     WidthRequest="500"
                     Clicked="CloseDialogGPSSettings_button"
                     Margin="5"
@@ -419,7 +419,7 @@
                 </Button>
                 <Button
                     x:Name="DialogYes"
-                    Text="Да"
+                    Text="Yes"
                     WidthRequest="500"
                     Clicked="OpenGPSSettings"
                     Margin="5"

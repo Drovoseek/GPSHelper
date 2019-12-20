@@ -84,7 +84,7 @@ namespace GpsTryForms
                 OptionableSms.IsEnabled = false;
                 CopyCoordinates.IsEnabled = false;
                 LatitudeLabel.Text = "";
-                LongitudeLabel.Text = "Координаты недоступны, т.к. приложению не доступны сервисы GPS";
+                LongitudeLabel.Text = "Location is not available, because application doesn't have permission to use GPS services";
                 LatitudeLabel.TextColor = Xamarin.Forms.Color.FromHex("#ec407a");
                 LongitudeLabel.TextColor = Xamarin.Forms.Color.FromHex("#ec407a");
                 CoordsAreAvailable = false;
@@ -95,7 +95,7 @@ namespace GpsTryForms
                 OptionableSms.IsEnabled = false;
                 CopyCoordinates.IsEnabled = false;
                 LatitudeLabel.Text = "";
-                LongitudeLabel.Text = "Координаты недоступны, т.к. у Вас не включены сервисы GPS";
+                LongitudeLabel.Text = "Location is not available, because GPS services are off";
                 LatitudeLabel.TextColor = Xamarin.Forms.Color.FromHex("#ec407a");
                 LongitudeLabel.TextColor = Xamarin.Forms.Color.FromHex("#ec407a");
                 CoordsAreAvailable = false;
@@ -119,8 +119,8 @@ namespace GpsTryForms
                 }
                 catch(Exception e)
                 {
-                    LatitudeLabel.Text = "Подождите...";
-                    LongitudeLabel.Text = "Подождите...";
+                    LatitudeLabel.Text = "Loading...";
+                    LongitudeLabel.Text = "Loading...";
                     LatitudeLabel.TextColor = Xamarin.Forms.Color.Orange;
                     LongitudeLabel.TextColor = Xamarin.Forms.Color.Orange;
                 }
@@ -156,8 +156,8 @@ namespace GpsTryForms
                 EmergencySms.IsEnabled = false;
                 OptionableSms.IsEnabled = false;
                 CopyCoordinates.IsEnabled = false;
-                LatitudeLabel.Text = "Координаты недоступны, т.к.";
-                LongitudeLabel.Text = "приложению не доступны сервисы GPS";
+                LatitudeLabel.Text = "Location is not available, because";
+                LongitudeLabel.Text = "application doesn't have permission to use GPS services";
                 LatitudeLabel.TextColor = Xamarin.Forms.Color.FromHex("#ec407a");
                 LongitudeLabel.TextColor = Xamarin.Forms.Color.FromHex("#ec407a");
             }
@@ -166,8 +166,8 @@ namespace GpsTryForms
                 EmergencySms.IsEnabled = false;
                 OptionableSms.IsEnabled = false;
                 CopyCoordinates.IsEnabled = false;
-                LatitudeLabel.Text = "Координаты недоступны, т.к.";
-                LongitudeLabel.Text = "у Вас не включены сервисы GPS";
+                LatitudeLabel.Text = "Location is not available, because";
+                LongitudeLabel.Text = "GPS services are off";
                 LatitudeLabel.TextColor = Xamarin.Forms.Color.FromHex("#ec407a");
                 LongitudeLabel.TextColor = Xamarin.Forms.Color.FromHex("#ec407a");
             }
@@ -192,7 +192,7 @@ namespace GpsTryForms
                 {
                     string _latitude_text = LatitudeLabel.Text;
                     string _longitude_text = LongitudeLabel.Text;
-                    string sendText = "Нужна помощь, мои координаты: широта=" + _latitude_text + " долгота=" + _longitude_text;
+                    string sendText = "Require help, my location: latitude=" + _latitude_text + " longitude=" + _longitude_text;
                     string emergency_recipient = CrossSettings.Current.GetValueOrDefault("EmergencyRecipient", "112");
                     SmsManager.Default.SendTextMessage(emergency_recipient, null, sendText, null, null);
                     SendLabel.FadeTo(1, 250, Easing.CubicOut);
@@ -210,7 +210,7 @@ namespace GpsTryForms
             {
                 string _latitude_text = LatitudeLabel.Text;
                 string _longitude_text = LongitudeLabel.Text;
-                string sendText = "Нужна помощь, мои координаты: широта=" + _latitude_text + " долгота=" + _longitude_text;
+                string sendText = "Require help, my location: latitude=" + _latitude_text + " longitude=" + _longitude_text;
                 var smsMessenger = CrossMessaging.Current.SmsMessenger;
                 CustomRecipient = CrossSettings.Current.GetValueOrDefault("CustomRecipient", "112");
                 if (smsMessenger.CanSendSms)
@@ -226,7 +226,7 @@ namespace GpsTryForms
             {
                 string _latitude_text = LatitudeLabel.Text;
                 string _longitude_text = LongitudeLabel.Text;
-                string sendText = "Широта: " + _latitude_text + ", долгота: " + _longitude_text;
+                string sendText = "Latitude: " + _latitude_text + ", longitude: " + _longitude_text;
                 CrossClipboard.Current.SetText(sendText);
                 SavedLabel.FadeTo(1, 250, Easing.CubicOut);
                 SavedLabel.IsVisible = true;
